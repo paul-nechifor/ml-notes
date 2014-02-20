@@ -1,0 +1,58 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage[english]{babel}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{multirow}
+
+\newcommand*\sepstars{%
+  \begin{center}
+    $\star\star\star$
+  \end{center}
+}
+
+\title{Machine Learning: Personal Notes}
+\author{Paul Nechifor}
+
+\begin{document}
+
+\maketitle
+
+\section{Machine Learning}
+
+\subsection{Decision Trees}
+
+\begin{description}
+
+\item[entropy] (im)purity of an arbitrary collection of examples
+
+\item[entropy of a collection]
+
+\item[boolean classification]
+
+\item[entropy] \hfill
+Minimum number of bits needed to encode the classification of an arbitrary
+member of the collection (drawn at random with uniform probability). For
+boolean, if the number of positives is 1, the entropy is 0 since no information
+needs to be communicated. If it is 0.5, one bit is required. If it's 0.8 (or
+0.2), less than one bit is needed (on average).
+
+For a boolean classification:
+
+\begin{equation}
+    Entropy(S) \equiv -p_\oplus \log_2 p_\oplus - p_\ominus \log_2 p_\ominus
+    \notag
+\end{equation}
+
+General form:
+
+\begin{equation}
+    Entropy(S) \equiv \sum\limits_{i=1}^c -p_i \log_2 p_i
+    \notag
+\end{equation}
+
+\item[information gain] Measures the expected reduction in entropy.
+
+\end{description}
+
+\end{document}
