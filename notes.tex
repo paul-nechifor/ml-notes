@@ -15,7 +15,14 @@
 }
 
 \newcommand{\hitem}[1][default] {
-    \item[#1] \hfill \\ 
+    \item[#1] \hfill \\
+}
+
+\newcommand{\litem}[2][default] {
+    \item[#1] \hfill
+    \begin{itemize}
+        {#2}
+    \end{itemize}     
 }
 
 \title{Machine Learning: Personal Notes}
@@ -71,26 +78,88 @@ General form:
 
     \item[learning] supervised/unsupervised
     
-    \hitem[supervised learning starting point]
-    \begin{itemize}
+    \litem[supervised learning starting point]{
         \item vector of $p$ predictor measurements $X$ (input)
         \item outcome measurement $Y$ (response)
         \item in \emph{regression}, $Y$ is quantitative (e.g. price)
         \item in \emph{classification}, $Y$ takes values from a set (e.g.
             survived/died)
-    \end{itemize}
+    }
     
     \item[unsupervised learning] objective is more fuzzy
     
-    \hitem[machine vs statistical learning]
-    \begin{itemize}
+    \litem[machine vs statistical learning]{
         \item ML emphasizes large scale applications and prediction accuracy
         \item SL emphasizes models, their interpretability, precision and
             and uncertainty        
-    \end{itemize}
+    }
     
 \end{description}
 
+\subsection{Chapter 2}
 
+\begin{description}
+
+    \litem[notation]{
+        \item $X_1$ is called a feature, input, or predictor
+        \item $x$ is the input vector
+        \item we write our model as $Y = f(X) + \epsilon$, where $\epsilon$
+        measures the errors
+        \item hats (~$\hat{}$~) indicate estimation from training data
+    }
+    
+    \litem[purpose of $f(X)$]{
+        \item make predictions of $Y$ at new points
+        \item understand which components of $X$ are important and how each of
+        	them affects $Y$
+    }
+    
+    \litem[regression function]{
+    	\item $f(x) = E(Y|X=x)$ (expected value of $Y$ given $X = x$)
+    	\item since there are few or no points for every precise $x$ we relax
+    		the definition:
+    		\begin{equation}
+    			\hat{f}(x) = Ave(Y|X \in N(x)) \notag
+    		\end{equation}
+    		where $N(x)$ is some neighborhood of $x$
+    	\item nearest neighbor is good for small $p$ (e.g. $p \le 4$) and large
+    		$N$
+	}
+	
+	\item[the curse of dimensionality] nearest neighbors tend to be far away in
+		high dimensions
+		
+	\litem[parametric models, structured models]{
+		\item linear model (type of parametric model) (specified in terms of
+			$p+1$ parameters
+		\begin{equation}
+			f_L(X) = \beta_0 + \beta_1 X_1 + ... + \beta_p X_p \notag
+		\end{equation}
+		
+		\item quadratic model
+	}
+
+    \litem[book notation]{
+        \item $n$ = number of data points, $p$ = number of variables
+    }
+
+    \item[variance] Var($\epsilon$) (it's irreducible)
+
+    \item[reducible, irreducible]
+
+    \item[overfitting]
+
+    \item[mean squared error] $MSE = \frac{1}{n}\sum\limits_{i=1}^n (y_i -
+    	\hat{f}(x_i))^2$
+
+    \item[assessing model accuracy] fit a model $\hat{f}(x)$ to some training
+    	data Tr, but this will be biased toward overfit models, so test on
+    	a fresh test data Te
+
+    \item[bias-variance trade-off]
+    
+    \item[Bayes optimal classifier]
+    
+\end{description}
 
 \end{document}
