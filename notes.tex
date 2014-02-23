@@ -1,4 +1,7 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[12pt]{article}
+
+% A5 paper with tiny margins. Works well on a tablet.
+\usepackage[a5paper, top=0.2cm, right=0.2cm, bottom=0.2cm, left=0.2cm]{geometry}
 \usepackage[english]{babel}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
@@ -9,6 +12,10 @@
   \begin{center}
     $\star\star\star$
   \end{center}
+}
+
+\newcommand{\hitem}[1][default] {
+    \item[#1] \hfill \\ 
 }
 
 \title{Machine Learning: Personal Notes}
@@ -30,7 +37,7 @@
 
 \item[boolean classification]
 
-\item[entropy] \hfill
+\hitem[entropy]
 Minimum number of bits needed to encode the classification of an arbitrary
 member of the collection (drawn at random with uniform probability). For
 boolean, if the number of positives is 1, the entropy is 0 since no information
@@ -54,5 +61,36 @@ General form:
 \item[information gain] Measures the expected reduction in entropy.
 
 \end{description}
+
+
+\section{Statistical Learning}
+
+\subsection{Chapter 1}
+
+\begin{description}
+
+    \item[learning] supervised/unsupervised
+    
+    \hitem[supervised learning starting point]
+    \begin{itemize}
+        \item vector of $p$ predictor measurements $X$ (input)
+        \item outcome measurement $Y$ (response)
+        \item in \emph{regression}, $Y$ is quantitative (e.g. price)
+        \item in \emph{classification}, $Y$ takes values from a set (e.g.
+            survived/died)
+    \end{itemize}
+    
+    \item[unsupervised learning] objective is more fuzzy
+    
+    \hitem[machine vs statistical learning]
+    \begin{itemize}
+        \item ML emphasizes large scale applications and prediction accuracy
+        \item SL emphasizes models, their interpretability, precision and
+            and uncertainty        
+    \end{itemize}
+    
+\end{description}
+
+
 
 \end{document}
