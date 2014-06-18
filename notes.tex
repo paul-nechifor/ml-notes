@@ -101,6 +101,39 @@ General form:
     
 \end{description}
 
+\subsubsection{Perceptrons}
+
+\begin{description}
+
+    \item[general form]
+        Given inputs $x_1$ through $x_n$ the output function is:
+        
+        \begin{equation}
+            o(x_1, ..., x_n) = \left\{
+            \begin{array}{r l}
+                1 & \text{if } w_0 + w_1 x_1 + ... + w_n x_n > 0\\
+                -1 & \text{otherwise}
+            \end{array}
+            \right.
+            \notag
+        \end{equation}
+        
+    \item[vector form]
+        We imagine an aditional constant $x_0 = 1$ and rewrite it as:
+        \begin{equation}
+            o(\overrightarrow{x}) =
+                \text{sgn}(\overrightarrow{w}\overrightarrow{x})
+            \notag
+        \end{equation}
+        
+    \item[learning a perceptron] Choosing values for the weights.
+    
+    \item[representation] A hyperplane decision surface in $n$-dimensional
+        decision space. It's equation is
+        $\overrightarrow{w}\overrightarrow{x}=0$.
+
+\end{description}
+
 \section{Statistical Learning}
 
 \subsection{Chapter 1}
